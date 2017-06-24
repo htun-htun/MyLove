@@ -54,5 +54,7 @@ $db_name = "login"; // Database name
 # Acknowledgements
 
 [love.hackerzhou.me](https://github.com/hackerzhou/Love)
+
 [PHP-Login](https://github.com/fethica/PHP-Login)
+
 [TimelineJS3](https://github.com/NUKnightLab/TimelineJS3)
