@@ -1,104 +1,106 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>My Love Story</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<style type="text/css">
-		@font-face {
-			font-family: digit;
-			src: url('fonts/digital-7_mono.ttf') format("truetype");
-		}
-	</style>
-	<link href="css/default_dev.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/garden.js"></script>
+    <title>My Love Story</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('fonts/digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="css/default_dev.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
 </head>
 
 <body>
-	<div id="mainDiv">
-		<div id="content">
-			<div id="code">
-				<span class="comments">/**</span><br />
-				<span class="space"/><span class="comments">* We met here, at BIT.</span><br />
-                <span class="space"/><span class="comments">* Where our dreams start.</span><br />
-				<span class="space"/><span class="comments">* I wrote down this code to celebrate the 1st anniversary of us.</span><br />
-				<span class="space"/><span class="comments">*/</span><br />
-				Boy i = <span class="keyword">new</span> Boy(<span class="string">"DoraXu"</span>);<br />
-				Girl u = <span class="keyword">new</span> Girl(<span class="string">"GeeVenchy"</span>);<br />
-				<span class="comments">// Mar, 2015, We knew each other. </span><br />
-				i.knew(u);<br />
-                u.knew(i);<br />
-				<span class="comments">// Luckily, I got your attention.</span><br />
-				i.gotAttentionOf(u);<br />
-                <span class="comments">// We fell in love on Oct 1st, 2015.</span><br />
-				i.fellInLoveWith(u);<br />
-				<span class="comments">// Since then, We enjoyed life every day.</span><br />
-				i.enjoyed();<br />
-                u.enjoyed();<br />
-				<span class="comments">// And we gave the best things to each other.</span><br />
-				i.gaveBestTo(u);<br />
-                u.gaveBestTo(i);<br />
-				<span class="comments">// You said that you find the meaning of life because of me.</span><br />
-				<span class="comments">// So I kept doing my best to encourage you to find your own life.</span><br />
-                i.encouraged(u);<br />
-                <span class="comments">// You took good care of me.</span><br />
-                u.tookCareOf(i);<br />
-                <span class="comments">// Since life always twists and turns,</span><br />
-                <span class="comments">// I'll always be with you.</span><br />
-				i.beWith(u);<br />
-			</div>
-			<div id="loveHeart">
-				<canvas id="garden"></canvas>
-				<div id="words">
-					<div id="messages">
-						GeeVenchy, I've been in love with you for
-						<div id="elapseClock" onclick="window.location.href='home.php'" style="cursor: pointer"></div>
-					</div>
-					<div id="loveu">
-						Love u forever and ever.<br/>
-						<div class="signature">- DoraXu</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="copyright">
-			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
-			Copyright © 2017 DoraXu
-		</div>
-	</div>
-	<script type="text/javascript">
-		var offsetX = $("#loveHeart").width() / 2;
-		var offsetY = $("#loveHeart").height() / 2 - 55;
-		var together = new Date();
-		together.setFullYear(2015, 10, 1);
-		together.setHours(0);
-		together.setMinutes(0);
-		together.setSeconds(0);
-		together.setMilliseconds(0);
-		
-		if (!document.createElement('canvas').getContext) {
-			var msg = document.createElement("div");
-			msg.id = "errorMsg";
-			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-			document.body.appendChild(msg);
-			$("#code").css("display", "none")
-			$("#copyright").css("position", "absolute");
-			$("#copyright").css("bottom", "10px");
-		    document.execCommand("stop");
-		} else {
-			setTimeout(function () {
-				startHeartAnimation();
-			}, 1000);
+<div id="mainDiv">
+    <div id="content">
+        <div id="code">
+            <span class="comments">/**</span><br/>
+            <span class="comments">* We met here, at BIT.</span><br/>
+            <span class="comments">* Where our dreams start.</span><br/>
+            <span class="comments">* I wrote down this code to celebrate the 1st anniversary of us.</span><br/><span
+                class="comments">*/</span><br/>
+            Boy i = <span class="keyword">new</span> Boy(<span class="string">"DoraXu"</span>);<br/>
+            Girl u = <span class="keyword">new</span> Girl(<span class="string">"GeeVenchy"</span>);<br/>
+            <span class="comments">// Mar, 2015, We knew each other. </span><br/>
+            i.knew(u);<br/>
+            u.knew(i);<br/>
+            <span class="comments">// Luckily, I got your attention.</span><br/>
+            i.gotAttentionOf(u);<br/>
+            <span class="comments">// We fell in love on Oct 1st, 2015.</span><br/>
+            i.fellInLoveWith(u);<br/>
+            <span class="comments">// Since then, We enjoyed life every day.</span><br/>
+            i.enjoyed();<br/>
+            u.enjoyed();<br/>
+            <span class="comments">// And we gave the best things to each other.</span><br/>
+            i.gaveBestTo(u);<br/>
+            u.gaveBestTo(i);<br/>
+            <span class="comments">// You said that you find the meaning of life because of me.</span><br/>
+            <span class="comments">// So I kept doing my best to encourage you to find your own life.</span><br/>
+            i.encouraged(u);<br/>
+            <span class="comments">// You took good care of me.</span><br/>
+            u.tookCareOf(i);<br/>
+            <span class="comments">// Since life always twists and turns,</span><br/>
+            <span class="comments">// I'll always be with you.</span><br/>
+            i.beWith(u);<br/>
+        </div>
+        <div id="loveHeart">
+            <canvas id="garden"></canvas>
+            <div id="words">
+                <div id="messages">
+                    GeeVenchy, I've been in love with you for
+                    <div id="elapseClock" onclick="window.location.href='home.php'" style="cursor: pointer"></div>
+                </div>
+                <div id="loveu">
+                    Love u forever and ever.<br/>
+                    <div class="signature">- DoraXu</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br/>
+        Copyright © 2017 DoraXu
+    </div>
+</div>
+<script type="text/javascript">
+    var loveHeart = $("#loveHeart");
+    var offsetX = loveHeart.width() / 2;
+    var offsetY = loveHeart.height() / 2 - 55;
+    var together = new Date();
+    together.setFullYear(2015, 9, 1);
+    together.setHours(0);
+    together.setMinutes(0);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
 
-			timeElapse(together);
-			setInterval(function () {
-				timeElapse(together);
-			}, 500);
+    if (!document.createElement('canvas').getContext) {
+        var msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none");
+        var copyright = $("#copyright");
+        copyright.css("position", "absolute");
+        copyright.css("bottom", "10px");
+        document.execCommand("stop");
+    } else {
+        setTimeout(function () {
+            startHeartAnimation();
+        }, 1000);
 
-			adjustCodePosition();
-			$("#code").typewriter();
-		}
-	</script>
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+
+        adjustCodePosition();
+        $("#code").typewriter();
+    }
+</script>
 </body>
 </html>
