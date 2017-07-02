@@ -55,10 +55,14 @@
 
 <!-- Time Line -->
 <script>
+    var options = {
+        hash_bookmark: true,
+        language: "zh-cn"
+    };
     // two arguments: the id of the Timeline container (no '#')
     // and the JSON object or an instance of TL.TimelineConfig created from
     // a suitable JSON object
-    window.timeline = new TL.Timeline('timeline', 'timeline3.json');
+    window.timeline = new TL.Timeline('timeline', 'timeline/timeline3.json', options);
 </script>
 
 </body>
