@@ -42,6 +42,8 @@ $password = "password"; // Mysql password
 $db_name = "login"; // Database name
 ```
 
+* Sign up at `login/signup.php`
+
 ## Features
 
 * support login at timer
