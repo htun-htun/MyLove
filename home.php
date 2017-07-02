@@ -50,7 +50,6 @@
 
 <!-- container -->
 <div class="container">
-    <!-- <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1AjVsnng0l5BLmj1a2siqjEYvg2TjxCZ5KBXvoq9338c&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>-->
     <div id='timeline' style="width: 100%; height: 500px"></div>
 </div>
 
