@@ -43,6 +43,7 @@ $db_name = "login"; // Database name
 ```
 
 * Sign up at `login/signup.php`
+* Create directory `timeline` at root and write your `timeline3.json` for timeline, for [example](https://timeline.knightlab.com/docs/json-format.html)
 
 ## Features
 
