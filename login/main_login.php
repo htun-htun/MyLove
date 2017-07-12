@@ -33,6 +33,7 @@ if (isset($_SESSION['username'])) {
           <div class="collapse navbar-collapse" id="navbar-collapse-1">
               <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Home</a></li>
+                  <li class="disabled"><a href="#">Smart Menu</a></li>
                   <li class="disabled"><a href="#">Draw & Guess</a></li>
                   <li class="dropdown disabled">
                       <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Me <span class="caret"></span> </a>

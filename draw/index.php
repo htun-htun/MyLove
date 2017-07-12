@@ -37,6 +37,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="../home.php">Home</a></li>
+                <li><a href="../smartMenu/index.php">Smart Menu</a></li>
                 <li class="active"><a href="#">Draw & Guess</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Me <span class="caret"></span> </a>
@@ -54,7 +55,18 @@
     </div>
 
 	<script type="text/javascript">
-		var defaultBoard = new DrawingBoard.Board('draw-board');
+		var defaultBoard = new DrawingBoard.Board('draw-board', {
+		    controls: [
+		        'Color',
+                {Size: {type: 'dropdown' }},
+                'DrawingMode',
+                'Navigation',
+                'Download'
+            ],
+            size: 1,
+            webStorage: 'session',
+            enlargeYourContainer: true
+        });
 	</script>
 </body>
 </html>
