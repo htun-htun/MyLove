@@ -12,7 +12,7 @@
     <link href="css/default_dev.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js"></script>
 </head>
 
 <body>
@@ -20,8 +20,8 @@
     <div id="content">
         <div id="code">
             <span class="comments">/**</span><br/>
-            <span class="comments">* We met here, at BIT.</span><br/>
-            <span class="comments">* Where our dreams start.</span><br/>
+            <span class="space"></span><span class="comments">* We met here, at BIT.</span><br/>
+            <span class="space"></span><span class="comments">* Where our dreams start.</span><br/>
             <span class="comments">* I wrote down this code to celebrate the 1st anniversary of us.</span><br/><span
                 class="comments">*/</span><br/>
             Boy i = <span class="keyword">new</span> Boy(<span class="string">"DoraXu"</span>);<br/>
@@ -90,12 +90,13 @@
         document.execCommand("stop");
     } else {
         setTimeout(function () {
+            adjustWordsPosition();
             startHeartAnimation();
         }, 1000);
 
-        timeElapse(together);
+        timeElapse(together, 1);
         setInterval(function () {
-            timeElapse(together);
+            timeElapse(together, 1);
         }, 500);
 
         adjustCodePosition();
