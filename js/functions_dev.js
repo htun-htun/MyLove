@@ -4,22 +4,21 @@ var clientWidth = $(window).width();
 var clientHeight = $(window).height();
 
 $(function () {
-    // setup garden
-    $loveHeart = $("#loveHeart");
-    var offsetX = $loveHeart.width() / 2;
-    var offsetY = $loveHeart.height() / 2 - 55;
+    var $loveHeart = $("#loveHeart");
     $garden = $("#garden");
     gardenCanvas = $garden[0];
-    gardenCanvas.width = $("#loveHeart").width();
-    gardenCanvas.height = $("#loveHeart").height()
+    gardenCanvas.width = $loveHeart.width();
+    gardenCanvas.height = $loveHeart.height();
     gardenCtx = gardenCanvas.getContext("2d");
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
 
-    $("#content").css("width", $loveHeart.width() + $("#code").width());
-    $("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
-    $("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
-    $("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
+    var $content = $("#content");
+    var $code = $("#code");
+    $content.css("width", $loveHeart.width() + $code.width());
+    $content.css("height", Math.max($loveHeart.height(), $code.height()));
+    $content.css("margin-top", Math.max(($window.height() - $content.height()) / 2, 10));
+    $content.css("margin-left", Math.max(($window.width() - $content.width()) / 2, 10));
 
     // renderLoop
     setInterval(function () {
@@ -30,24 +29,24 @@ $(function () {
 $(window).resize(function () {
     var newWidth = $(window).width();
     var newHeight = $(window).height();
-    if (newWidth != clientWidth && newHeight != clientHeight) {
+    if (newWidth !== clientWidth && newHeight !== clientHeight) {
         location.replace(location);
     }
 });
 
-function getHeartPoint(angle) {
+function getHeartPoint(offsetX, offsetY, angle) {
     var t = angle / Math.PI;
     var x = 19.5 * (16 * Math.pow(Math.sin(t), 3));
     var y = -20 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-    return new Array(offsetX + x, offsetY + y);
+    return [offsetX + x, offsetY + y];
 }
 
-function startHeartAnimation() {
+function startHeartAnimation(offsetX, offsetY) {
     var interval = 50;
     var angle = 10;
-    var heart = new Array();
+    var heart = [];
     var animationTimer = setInterval(function () {
-        var bloom = getHeartPoint(angle);
+        var bloom = getHeartPoint(offsetX, offsetY, angle);
         var draw = true;
         for (var i = 0; i < heart.length; i++) {
             var p = heart[i];
@@ -77,12 +76,12 @@ function startHeartAnimation() {
             $ele.html('');
             var timer = setInterval(function () {
                 var current = str.substr(progress, 1);
-                if (current == '<') {
+                if (current === '<') {
                     progress = str.indexOf('>', progress) + 1;
                 } else {
                     progress++;
                 }
-                $ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
+                $ele.html(str.substring(0, progress) + ((progress & 1)===1 ? '_' : ''));
                 if (progress >= str.length) {
                     clearInterval(timer);
                 }
@@ -121,7 +120,7 @@ function timeElapse(date, mode) {
         current.setDate(current.getDate() - 1);
     }
     if (mode === 1) {
-        days = current.getDate() - date.getDate();
+        days = current.getDate() - date.getDate() + 1;
         if (days < 0) {
             days += getDaysInMonth(current.getMonth());
             current.setDate(current.getDate() - 1);
@@ -134,7 +133,7 @@ function timeElapse(date, mode) {
         years = current.getFullYear() - date.getFullYear();
     }
     else{
-        days = Math.floor((current.getTime() - date.getTime()) / (1000 * 3600 * 24));
+        days = Math.floor((current.getTime() - date.getTime() + 1) / (1000 * 3600 * 24));
     }
 
     if (hours < 10) {
@@ -165,13 +164,16 @@ function showMessages() {
 }
 
 function adjustWordsPosition() {
-    $('#words').css("position", "absolute");
-    $('#words').css("top", $("#garden").position().top + 195);
-    $('#words').css("left", $("#garden").position().left + 70);
+    var $words = $('#words');
+    var $garden = $('#garden');
+    $words.css("position", "absolute");
+    $words.css("top", $garden.position().top + 195);
+    $words.css("left", $garden.position().left + 70);
 }
 
 function adjustCodePosition() {
-    $('#code').css("margin-top", ($("#garden").height() - $("#code").height()) / 2);
+    var $code = $('#code');
+    $code.css("margin-top", ($("#garden").height() - $code.height()) / 2);
 }
 
 function showLoveU() {

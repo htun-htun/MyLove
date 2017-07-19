@@ -46,10 +46,7 @@
     </nav>
 
     <div class="container">
-        <div class="jumbotron">
-            <!--<h1>恭喜!</h1>-->
-            <p>您今天应该吃：上海城隍庙小笼包</p>
-        </div>
+        <div id="toEat" class="alert alert-info" role="alert"></div>
     </div>
 
 	<!--<h1>Here is the menu</h1> -->
@@ -58,8 +55,14 @@
     </div>
 
     <script type="text/javascript">
-        var $table = $('#table');
+        var toEat = $("#toEat");
+        $.getJSON ("menu.json", function (data){
+            var index = Math.floor(Math.random() * data.length);
+            toEat.append("您今天应该吃：<b>" + data[index].restaurant + " - " + data[index].food + "</b>");
+        });
 
+
+        var $table = $('#table');
         $table.bootstrapTable({
             url: 'menu.json',
             pagination: 'true',
