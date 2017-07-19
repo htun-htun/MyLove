@@ -8,7 +8,7 @@ This is a project for my girlfriend, Geevenchy.
 * Move this project to your `Apache http server`
 * Creating MySQL Database `login` and create tables `members` and `loginAttempts`:
 
-```sql
+```mysql
 CREATE TABLE `members` (
   `id` char(23) NOT NULL,
   `username` varchar(65) NOT NULL DEFAULT '',
@@ -43,12 +43,29 @@ $db_name = "login"; // Database name
 ```
 
 * Sign up at `login/signup.php`
-* Create directory `timeline` at root and write your `timeline3.json` for timeline, for [example](https://timeline.knightlab.com/docs/json-format.html)
+* Create directory `timeline` at root, put your pictures and write your `timeline3.json` for timeline, for [example](https://timeline.knightlab.com/docs/json-format.html).
+* Write your `menu.json` in the `smartMenu` folder, for `SmartMenu`. Like this:
+
+```json
+[
+  {
+    "restaurant": "Mcdonald",
+    "food": "Hamburger"
+  },
+  {
+    "restaurant": "KFC",
+    "food": "Chicken"
+  }
+]
+```
+
+* and so on...
 
 ## Features
 
-* support login at timer
+* support login
 * Home with timeline
+* Smart Menu
 
 ## Comming soon
 
@@ -61,3 +78,5 @@ $db_name = "login"; // Database name
 [PHP-Login](https://github.com/fethica/PHP-Login)
 
 [TimelineJS3](https://github.com/NUKnightLab/TimelineJS3)
+
+[Bootstrap Table](https://github.com/wenzhixin/bootstrap-table)
